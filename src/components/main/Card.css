@@ -1,0 +1,56 @@
+.character__card {
+  margin: 30px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 400px;
+  border: 2px solid #dedede;
+  border-radius: 10px;
+  margin: 10px 20px;
+  box-shadow: 0px 0px 10px #dedede;
+  padding: 10px 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__img {
+  width: 45%;
+  text-align: center;
+  margin: 25px auto;
+}
+
+.card__img__tag {
+  width: 90%;
+  height: 100%;
+  border: 2px solid #dedede;
+  border-radius: 50%;
+}
+
+.card_propertiesTag {
+  width: 45%;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.more {
+  display: block;
+  margin: 3px auto;
+}
