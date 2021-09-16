@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./Footer.css";
 
-function Footer() {
-  const [activeHouse, setActiveHouse] = useState("");
-
+function Footer({ activeHouse, onHouseButtonClick }) {
   return (
     <footer className="footer">
       <nav className="navigation">
@@ -13,7 +10,7 @@ function Footer() {
               ? "footer__button--active"
               : "navigation__button"
           }
-          onClick={() => setActiveHouse("Gryffindor")}
+          onClick={() => onHouseButtonClick("Gryffindor")}
         >
           Gryffindor
         </button>
@@ -23,7 +20,7 @@ function Footer() {
               ? "footer__button--active"
               : "navigation__button"
           }
-          onClick={() => setActiveHouse("Hufflepuff")}
+          onClick={() => onHouseButtonClick("Hufflepuff")}
         >
           Hufflepuff
         </button>
@@ -33,7 +30,7 @@ function Footer() {
               ? "footer__button--active"
               : "navigation__button"
           }
-          onClick={() => setActiveHouse("Ravenclaw")}
+          onClick={() => onHouseButtonClick("Ravenclaw")}
         >
           Ravenclaw
         </button>
@@ -43,7 +40,7 @@ function Footer() {
               ? "footer__button--active"
               : "navigation__button"
           }
-          onClick={() => setActiveHouse("Slytherin")}
+          onClick={() => onHouseButtonClick("Slytherin")}
         >
           Slytherin
         </button>

@@ -29,6 +29,8 @@ function Main({
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [emoji, setEmoji] = useState("");
+  /* const [favourite, setFavourite] = useState(false); */
+  /* console.log(favourite); */
 
   const color = tellColorName(house);
 
@@ -40,6 +42,15 @@ function Main({
             <img className="card__img__tag" src={imgUrl} alt={characterName} />
           </div>
           <div className="card_propertiesTag">
+            {/* <button onClick={() => setFavourite(!favourite)}>
+              {favourite ? (
+                <Icon path={mdiHeart} />
+              ) : (
+                <Icon path={mdiHeartOutline} />
+              )}
+            </button> */}
+
+            <Emoji setEmoji={setEmoji} />
             <h4 className="card__name">
               {emoji} Name : {characterName}{" "}
             </h4>
@@ -63,8 +74,6 @@ function Main({
               : characterName === "Ron Weasley"
               ? "🤫"
               : ""}
-
-            <Emoji setEmoji={setEmoji} />
           </div>
         </section>
       </div>

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/header/Header";
 import Card from "./components/main/Card";
 import Footer from "./components/footer/Footer";
 import data from "./data.json";
 
 function App() {
+  const [activeHouse, setActiveHouse] = useState("");
+
+  function handleHouseButtonClick(house) {
+    setActiveHouse(house);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -21,7 +27,10 @@ function App() {
         />
       ))}
 
-      <Footer />
+      <Footer
+        activeHouse={activeHouse}
+        onHouseButtonClick={handleHouseButtonClick}
+      />
     </div>
   );
 }
