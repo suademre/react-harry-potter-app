@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import Header from "./components/header/Header";
 import Card from "./components/main/Card";
 import Footer from "./components/footer/Footer";
-import data from "./data.json";
 
-function App() {
+function App({ data }) {
   const [activeHouse, setActiveHouse] = useState("");
 
   function handleHouseButtonClick(house) {
     setActiveHouse(house);
   }
 
+  const filteredData = data.filter(
+    (character) => character.house === activeHouse || activeHouse === ""
+  );
+
   return (
     <div className="App">
       <Header />
-      {data.map((character) => (
+      {filteredData.map((character) => (
         <Card
           key={character.name}
           characterName={character.name}
