@@ -26,6 +26,8 @@ function Main({
   gender,
   birthday,
   yearOfBirth,
+  isFavorite,
+  onFavoriteButtonClick,
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [emoji, setEmoji] = useState("");
@@ -35,7 +37,7 @@ function Main({
   return (
     <>
       <div className="character__card">
-        <section className="card">
+        <section className={"card" + (isFavorite ? " card--favorite" : "")}>
           <div className="card__img">
             <img className="card__img__tag" src={imgUrl} alt={characterName} />
           </div>
@@ -50,6 +52,13 @@ function Main({
             <button onClick={() => setShowAnswer(!showAnswer)} className="more">
               More
             </button>
+            <button
+              onClick={() => onFavoriteButtonClick(characterName)}
+              className="favourite"
+            >
+              Favourite
+            </button>
+
             {showAnswer && (
               <div className="moreInfo">
                 <h6>Gender : {gender}</h6>
