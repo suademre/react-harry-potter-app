@@ -54,3 +54,7 @@
   display: block;
   margin: 3px auto;
 }
+
+.card--favorite {
+  background-color: gray;
+}
