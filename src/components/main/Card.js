@@ -28,21 +28,57 @@ function Main({
   yearOfBirth,
   isFavorite,
   onFavoriteButtonClick,
+  favorites,
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [emoji, setEmoji] = useState("");
 
+  const handleImojiClick = (item) => {
+    item !== emoji ? setEmoji(item) : setEmoji("");
+  };
+
   const color = tellColorName(house);
+
+  console.log("isFavorite : " + isFavorite);
 
   return (
     <>
       <div className="character__card">
-        <section className={"card" + (isFavorite ? " card--favorite" : "")}>
+        <section
+          className={
+            "card" +
+            (isFavorite && house === "Gryffindor"
+              ? " card__favorite--red"
+              : isFavorite && house === "Hufflepuff"
+              ? " card__favorite--yellow"
+              : isFavorite && house === "Ravenclaw"
+              ? " card__favorite--blue"
+              : isFavorite && house === "Slytherin"
+              ? " card__favorite--green"
+              : "")
+          }
+        >
           <div className="card__img">
             <img className="card__img__tag" src={imgUrl} alt={characterName} />
           </div>
           <div className="card_propertiesTag">
-            <Emoji setEmoji={setEmoji} />
+            {/* {isFavorite ? (
+              <i className="fas fa-heart"></i>
+            ) : (
+              <i className="far fa-heart"></i>
+            )} */}
+            <button
+              onClick={() => onFavoriteButtonClick(characterName)}
+              className="favourite__button"
+            >
+              {isFavorite ? (
+                <i className="fas fa-heart"></i>
+              ) : (
+                <i className="far fa-heart"></i>
+              )}
+            </button>
+
+            <Emoji handleImojiClick={handleImojiClick} />
             <h4 className="card__name">
               {emoji} Name : {characterName}{" "}
             </h4>
@@ -51,12 +87,6 @@ function Main({
             <h6 className={color}>House : {house}</h6>
             <button onClick={() => setShowAnswer(!showAnswer)} className="more">
               More
-            </button>
-            <button
-              onClick={() => onFavoriteButtonClick(characterName)}
-              className="favourite"
-            >
-              Favourite
             </button>
 
             {showAnswer && (

@@ -4,13 +4,9 @@ import Card from "./components/main/Card";
 import Footer from "./components/footer/Footer";
 
 function App({ data }) {
-  const initialEmojiState = data.map((character) => ({
-    name: character.name,
-    favourite: false,
-  }));
   const [activeHouse, setActiveHouse] = useState("");
 
-  /* const changeFavourite = (name) => {
+  /* const changeFavourite = (name) => 
     const items = favourite.filter((item) => item.name === name);
     console.log(items);
     items.favourite = !items.favourite;
@@ -73,6 +69,7 @@ function App({ data }) {
           yearOfBirth={character.yearOfBirth}
           onFavoriteButtonClick={handleFavoriteButtonClick}
           isFavorite={favorites.indexOf(character.name) > -1}
+          favorites={favorites}
         />
       ))}
 

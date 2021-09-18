@@ -1,22 +1,20 @@
 import React from "react";
+import "./Emoji.css";
 
-function Emoji({ setEmoji }) {
+function Emoji({ handleImojiClick }) {
   return (
     <div className="emoji__buttons">
-      <button className="emoji__button" onClick={() => setEmoji("👹")}>
+      <button className="emoji__button" onClick={() => handleImojiClick("👹")}>
         👹
       </button>
-      <button className="emoji__button" onClick={() => setEmoji("😥")}>
+      <button className="emoji__button" onClick={() => handleImojiClick("😥")}>
         😥
       </button>
-      <button className="emoji__button" onClick={() => setEmoji("🤫")}>
+      <button className="emoji__button" onClick={() => handleImojiClick("🤫")}>
         🤫
       </button>
-      <button className="emoji__button" onClick={() => setEmoji("🎃")}>
+      <button className="emoji__button" onClick={() => handleImojiClick("🎃")}>
         🎃
-      </button>
-      <button className="emoji__button" onClick={() => setEmoji("")}>
-        Leer
       </button>
     </div>
   );
