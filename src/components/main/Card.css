@@ -1,7 +1,5 @@
 .character__card {
-  margin: 30px 0px;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 60px 0px;
 }
 .card {
   width: 400px;
@@ -21,7 +19,7 @@
 }
 
 .card__img__tag {
-  width: 90%;
+  max-width: 150px;
   height: 100%;
   border: 2px solid #dedede;
   border-radius: 50%;
@@ -50,6 +48,22 @@
   color: green;
 }
 
+.card__favorite--red {
+  background-color: lightcoral;
+}
+
+.card__favorite--yellow {
+  background-color: lightyellow;
+}
+
+.card__favorite--blue {
+  background-color: lightblue;
+}
+
+.card__favorite--green {
+  background-color: lightgreen;
+}
+
 .more {
   display: block;
   margin: 3px auto;
@@ -57,4 +71,12 @@
 
 .card--favorite {
   background-color: gray;
+}
+
+.favourite__button {
+  background: transparent;
+  border: none;
+  margin-left: 80%;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
